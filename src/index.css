@@ -19,3 +19,8 @@ nav a{
   margin-right: 16px;
 }
 
+.photo {
+  height: 400px;
+  width: 400px;
+}
+
