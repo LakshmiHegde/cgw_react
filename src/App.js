@@ -12,6 +12,12 @@ import {SearchShops} from "./Components/Dashboards/SearchShops";
 import {PartnerDashboard} from "./Components/Dashboards/PartnerDashboard";
 import {DeliveryDashboard} from "./Components/Dashboards/DeliveryDashboard";
 import {Carts} from "./Components/Dashboards/Carts";
+import {Ordernow} from "./Components/Dashboards/Ordernow";
+import {Inventory} from "./Components/Dashboards/Inventory";
+import {GiftShops} from "./Components/Dashboards/GiftShops";
+import {SweetShops} from "./Components/Dashboards/SweetShops";
+import {ViewItemsToCustomer} from "./Components/Dashboards/ViewItemsToCustomer";
+
 function App() {
   return (
     <div className="App">
@@ -31,6 +37,11 @@ function App() {
         <Route path="part_dashboard/:userid/" element={<PartnerDashboard/>}></Route>
         <Route path="del_dashboard/:userid/" element={<DeliveryDashboard/>}></Route>
         <Route path="cart/:userid" element={<Carts/>}/>
+        <Route path="ordernow/:userid" element={<Ordernow/>}/>
+        <Route path="/inventory/:userid" element={<Inventory/>}/>
+        <Route path="/giftshops/:userid" element={<GiftShops/>}/>
+        <Route path="/sweetshops/:userid" element={<SweetShops/>}/>
+        <Route path="/viewItemsToCustomer/:userid/:shopid" element={<ViewItemsToCustomer/>}/>
       </Routes>
     </div>
   );

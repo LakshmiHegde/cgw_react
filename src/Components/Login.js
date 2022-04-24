@@ -1,7 +1,8 @@
 import React, { useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import {CustomerDashboard} from "./Dashboards/CustomerDashboard";
+import Footer from "./Footer/Footer";
+
 export function Login(){
     const navigate= useNavigate()
     const[credentials, setCredentials] = useState({username:'',password:'',type:'cust'})
@@ -36,31 +37,43 @@ export function Login(){
         navigate("/register")
         event.preventDefault()
     }
-
-
     return (
-            <div>
-            <form onSubmit={submitresponse}>
-               <div><label>Username: </label>
-                <input type='text' onChange={(e)=>{setCredentials({...credentials, username:e.target.value})}}/>
-               </div>
-                <div><label>Password: </label>
-                <input type='password' onChange={(e)=>{setCredentials({...credentials, password:e.target.value})}}/>
-                </div>
-                <div>
-                <label>Type: </label>
-                <select onChange={(e)=>{setCredentials({...credentials, type:e.target.value})}}>
-                    <option value='cust'>Customer</option>
-                    <option value='part'>Partner</option>
-                    <option value='del'>Delivery</option>
-                </select>
-                </div>
-                <div><input type='submit' value='Login' onChange={submitresponse}/></div>
+        <>
+            <div style={{ position: 'relative',
+                width: '900px',
+                height: '700px',
+                margin: '1px'}}>
+                <h1>Crowdsource Gift Website</h1>
+            </div>
 
-            </form>
-            <div><input type='button' value='Register' onClick={register}/></div>
-
-        </div>
+            <div className="b" style={{position: 'relative',width:'100%'}}>
+                <div style={{position:'absolute',  margin:'200px',width:'55%',height:'100px'}}>
+                    <form onSubmit={submitresponse}>
+                        <div><label>Username: </label>
+                            <input type='text' onChange={(e)=>{setCredentials({...credentials, username:e.target.value})}}/>
+                        </div>
+                        <br/>
+                        <div><label>Password: </label>
+                            <input type='password' onChange={(e)=>{setCredentials({...credentials, password:e.target.value})}}/>
+                        </div>
+                        <br/>
+                        <div>
+                            <label>Type: </label>
+                            <select onChange={(e)=>{setCredentials({...credentials, type:e.target.value})}}>
+                                <option value='cust'>Customer</option>
+                                <option value='part'>Partner</option>
+                                <option value='del'>Delivery</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <div><input type='submit' value='Login' onChange={submitresponse}/>         <input type='button' value='Register' onClick={register}/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div ></div>
+            <Footer/>
+        </>
         );
 
 }
