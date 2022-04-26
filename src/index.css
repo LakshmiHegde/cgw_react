@@ -123,13 +123,32 @@ li a:hover {
   border: 1px solid #111111;
   background-color: transparent;
   height: 200px;
-  width: 800px;
+  width: 700px;
   color: #3498db;
   font-size: 1em;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
 }
 
+.btn_class {
+  cursor: pointer;
+  border: 1px solid #111111;
+  background-color: transparent;
+  height: 300px;
+  width: 700px;
+  color: #3498db;
+  font-size: 1px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+.desc {
+  cursor: pointer;
+  border: 1px solid #111111;
+  background-color: transparent;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+
+}
 
 .photo {
   height: 200px;

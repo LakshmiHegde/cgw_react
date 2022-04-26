@@ -55,8 +55,7 @@ export function SearchShops(props){
                                 <br/><br/>
                                    </div>
                                 )
-                                :
-                                <h1>NoShops</h1>
+                                :""
             }
 
 

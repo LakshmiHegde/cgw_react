@@ -17,6 +17,7 @@ import {Inventory} from "./Components/Dashboards/Inventory";
 import {GiftShops} from "./Components/Dashboards/GiftShops";
 import {SweetShops} from "./Components/Dashboards/SweetShops";
 import {ViewItemsToCustomer} from "./Components/Dashboards/ViewItemsToCustomer";
+import {BuyNow} from "./Components/Dashboards/BuyNow";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/giftshops/:userid" element={<GiftShops/>}/>
         <Route path="/sweetshops/:userid" element={<SweetShops/>}/>
         <Route path="/viewItemsToCustomer/:userid/:shopid" element={<ViewItemsToCustomer/>}/>
+        <Route path="/buynow/:userid/:itemid/:qty" element={<BuyNow/>}/>
       </Routes>
     </div>
   );

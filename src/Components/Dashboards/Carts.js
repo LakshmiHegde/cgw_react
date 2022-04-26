@@ -22,39 +22,41 @@ export function Carts(){
         getData()
     },[])
 
+    const takeToBuyNowPage = (e) =>
+    {
+        navigate("/buynow/"+params.userid+"/"+e.target.name+"/"+e.target.id)///itemid/qty
+    }
     const ordernow  = (e) => {
         e.preventDefault()
       console.log("reached")
         navigate("/ordernow/"+params.userid)
     }
     return(
-        <div className="App">
-        <table>
-            <tr>
-                <th>Item</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th> :
-                    <h1>NoShops</h1>
-                <th>Quantity</th>
-                <th>Buy Now</th>
-            </tr>
+        <div>
                     {
                         cart.length>0
                             ? cart.map((item)=>
+                                <div>
+                                    <button className="btn_class">
+                                        <img align='left' style = {{right:'0px' , height: '200px' , width: '200px'}} alt={item.item_name} src={`data:image/jpeg;base64,${item.image}`}  /><br/><br/><br/><br/>
+                                        <h1 align="right" style={{fontSize:'12px'}}>
+                                            <button className="desc">Name: {item.item_name}</button><br/><br/>
+                                            <button className="desc">Price: {item.price}</button><br/><br/>
+                                            <button className="desc">Quantity: {item.qty}</button><br/><br/>
+                                        </h1><br/><br/><br/>
+                                        <p align="left">
+                                            <button className="desc"  style={{height:'100px', width:'290px'}}>Description: {item.description}</button> <br/>
+                                        </p>
+                                        <p align="right">
+                                            <button className="desc" name={item.id} id={item.qty} onClick={takeToBuyNowPage}>Buy now</button>
+                                        </p>
+                                        <br/>
+                                    </button><br/><br/>
+                                </div>
 
-                                    <tr>
-                                        <td><img alt="" src={`data:image/jpeg;base64,${item.image}`} className="photo"/></td>
-                                        <td>{item.item_name}</td>
-                                        <td>{item.description}</td>
-                                        <td>{item.price}</td>
-                                        <td>{item.qty}</td>
-                                        <td><input type="button" onClick={ordernow} value="Order now"/></td>
-                                    </tr>
                             )
-                            :toast.error("No items carted")
+                            :""
                     }
-        </table>
         </div>
 
     )
